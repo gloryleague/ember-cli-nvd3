@@ -7,8 +7,7 @@ const {
   observer,
   isNone,
   run,
-  on,
-  $
+  on
 } = Ember;
 
 export default Ember.Component.extend({
@@ -49,7 +48,7 @@ export default Ember.Component.extend({
         throw new TypeError(`Could not find chart of type ${chartType}`);
       }
 
-      $(selector).html('');
+      this.element.innerHTML = '';
 
       svgContainer = d3.select(selector).append('svg');
       chart = nv.models[chartType]();
